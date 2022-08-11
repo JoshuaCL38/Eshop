@@ -10,6 +10,7 @@ class OrderView(View):
 
 
     def get(self , request ):
+        context = {}
         customer = request.session.get('customer')
         orders = Order.get_orders_by_customer(customer)
         print(orders)

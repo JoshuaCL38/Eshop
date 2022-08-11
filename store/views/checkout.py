@@ -20,11 +20,11 @@ class CheckOut(View):
         for product in products:
             print(cart.get(str(product.id)))
             order = Order(customer=Customer(id=customer),
-                          product=product,
-                          price=product.price,
-                          address=address,
-                          phone=phone,
-                          quantity=cart.get(str(product.id)))
+                        product=product,
+                        price=product.price,
+                        address=address,
+                        phone=phone,
+                        quantity=cart.get(str(product.id)))
             order.save()
         request.session['cart'] = {}
 
